@@ -1,0 +1,48 @@
+<div>
+  <label>name:
+    <input [(ngModel)]="hero.name" placeholder="name">
+  </label>
+</div>
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [ngClass]="selectedHero === hero? 'selected' : ''">
+    <span class="heroes__badge">{{hero.id}}</span> <span class="heroes__name">{{hero.name}}</span>
+  </li>
+</ul>
+
+<ng-container *ngIf="selectedHero">
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name">
+    </label>
+  </div>
+</ng-container>
+
+<div class="waves">
+  <div class="ocean">
+    <div class="wave a"></div>
+    <div class="wave b"></div>
+    <div class="wave c"></div>
+  </div>
+</div>
+
+
+<div class="heart--container">
+  <div class="heart" data-count="" id="like">
+  </div>
+</div>
+<div class="apetoi">
+  <div class="apetoi__main">
+    <div class="apetoi__left"></div>
+    <div class="apetoi__right"></div>
+    <div class="apetoi__bottom"></div>
+  </div>
+</div>
+<div class="platzi">
+  <div class="platzi__main">
+    <div class="platzi__left"></div>
+    <div class="platzi__right"></div>
+  </div>
+</div>

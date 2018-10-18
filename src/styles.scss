@@ -1,0 +1,403 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2,
+h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+  margin: 0;
+  height: 100vh;
+}
+body,
+input[text],
+button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.heroes {
+  padding: 0;
+  display: grid;
+  justify-content: flex-start;
+  grid-row-gap: 5px;
+  li {
+    cursor: pointer;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 2s;
+    user-select: none;
+    background: #ebebeb;
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-items: center;
+    border-radius: 0.1rem;
+    overflow: hidden;
+    &.selected {
+      background: #369;
+      color: white;
+    }
+  }
+  &__badge {
+    padding: 5px;
+    background: #abababab;
+  }
+  &__name {
+    margin-left: 5px;
+    margin-right: 5px;
+    box-sizing: border-box;
+  }
+}
+
+.platzi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #234050;
+  &__main {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 40px auto;
+    transform: rotate(45deg);
+    animation-name: platzi;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    will-change: opacity, transform;
+  }
+  &__left {
+    width: 100%;
+    height: 65%;
+    border: 20px solid #97c93e;
+    border-bottom: none;
+    box-sizing: border-box;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    top: 1px;
+    animation-name: platzi__left;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+  }
+  &__right {
+    width: 100%;
+    height: 35%;
+    border: 20px solid #97c93e;
+    border-radius: 0 0 20px 20px;
+    border-top: none;
+    box-sizing: border-box;
+  }
+}
+.apetoi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3fbfc6;
+  &__main {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 40px auto;
+    animation-name: apetoi;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    will-change: opacity, transform, border;
+  }
+  &__left {
+    width: 77%;
+    height: 77%;
+    border: 16px solid #ffffff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: relative;
+    top: 0px;
+    left: 6px;
+    animation-name: apetoi_bottom, apetoi__left;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+  }
+  &__right {
+    height: 77%;
+    width: 1%;
+    border: 8px solid #ffffff;
+    border-radius: 20px;
+    position: relative;
+    left: 70px;
+    top: -77px;
+    box-sizing: border-box;
+    animation-name: apetoi__right;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+  }
+  &__bottom {
+    height: 1%;
+    width: 77%;
+    border: 8px solid #002234;
+    border-radius: 20px 0 0 20px;
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    box-sizing: border-box;
+    animation-name: apetoi__bottom;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes platzi {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(0deg);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(0.8) rotate(405deg);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.8) rotate(405deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.1) rotate(0deg);
+  }
+}
+
+@keyframes platzi {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(0deg);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(0.8) rotate(405deg);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.8) rotate(405deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.1) rotate(0deg);
+  }
+}
+
+@keyframes platzi__left {
+  0% {
+    width: 100%;
+  }
+  20% {
+    width: 80%;
+  }
+  50% {
+    width: 80%;
+  }
+  60% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes apetoi {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(0deg);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(0.8) rotate(360deg);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.8) rotate(360deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.1) rotate(0deg);
+  }
+}
+@keyframes apetoi__left {
+  0% {
+    border: 1px solid #ffffff;
+    opacity: 0;
+  }
+  20% {
+    border: 20px solid #ffffff;
+  }
+  25% {
+    border: 14px solid #ffffff;
+  }
+  30% {
+    border: 19px solid #ffffff;
+  }
+  35% {
+    border: 15px solid #ffffff;
+  }
+  40% {
+    border: 18px solid #ffffff;
+  }
+  45% {
+    border: 16px solid #ffffff;
+  }
+  50% {
+    border: 14px solid #ffffff;
+  }
+  55% {
+    border: 15px solid #ffffff;
+  }
+  60% {
+    border: 16px solid #ffffff;
+    opacity: 1;
+  }
+}
+@keyframes apetoi__right {
+  0% {
+    height: 0%;
+    opacity: 0;
+  }
+  45% {
+    height: 77%;
+    opacity: 1;
+  }
+}
+@keyframes apetoi__bottom {
+  0% {
+    width: 0%;
+    opacity: 0;
+    border: 8px solid #ffffff;
+  }
+  45% {
+    width: 77%;
+    opacity: 1;
+    border-radius: 20px;
+  }
+}
+
+.heart {
+  &--container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  cursor: pointer;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-size: 1450px 50px;
+  background-image: url('./assets/heart.png');
+  will-change: background-position;
+  &::after {
+    content: attr(data-count);
+    position: absolute;
+    left: 30px;
+    top: 6px;
+    padding: 3px;
+    width: auto;
+    min-width: 1em;
+    height: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    border-radius: 1em;
+    font-family: Arial;
+    color: white;
+    font-size: 0.5em;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: 0.3s;
+    will-change: opacity, transform;
+  }
+  &.show::after {
+    opacity: 1;
+    transform: scale(1);
+  }
+  &.liked {
+    animation: like 1s steps(28) forwards;
+  }
+  &.unliked {
+    animation: unlike 0.5s steps(28) forwards;
+  }
+}
+
+@keyframes like {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: right;
+  }
+}
+@keyframes unlike {
+  0% {
+    background-position: right;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.waves {
+  width: 100%;
+  height: 50vh;
+  background: #0f9bf6;
+  .ocean {
+    width: 100%;
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+    margin: auto;
+    max-width: 1800px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    .wave {
+      width: 2402px;
+      height: 427px;
+      background: url('./assets/waves.png') center bottom repeat-x;
+      animation: wave 5s ease-in-out infinite alternate;
+      position: absolute;
+      left: -180px;
+      bottom: -200px;
+      will-change: transform;
+      &.a {
+        background-position: 0 -854px;
+      }
+      &.b {
+        background-position: 0 -427px;
+        animation-delay: 0.6s;
+      }
+      &.c {
+        background-position: 0 0;
+        animation-delay: 1.2s;
+      }
+    }
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-80px) translateY(30px);
+  }
+  100% {
+    transform: translateX(160px) translateY(-60px);
+  }
+}
