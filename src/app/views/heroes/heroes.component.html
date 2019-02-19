@@ -1,25 +1,40 @@
-<div>
-  <label>name:
-    <input [(ngModel)]="hero.name" placeholder="name">
+<!-- <div>
+  <label
+    >name:
+    <input [(ngModel)]="hero.name" placeholder="name" />
   </label>
-</div>
+</div> -->
 <h2>My Heroes</h2>
+<!-- <ul class="heroes">
+  <li
+    *ngFor="let hero of heroes"
+    (click)="onSelect(hero)"
+    [ngClass]="selectedHero === hero ? 'selected' : ''"
+  >
+    <span class="heroes__badge">{{ hero.id }}</span>
+    <span class="heroes__name">{{ hero.name }}</span>
+  </li>
+</ul> -->
 <ul class="heroes">
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [ngClass]="selectedHero === hero? 'selected' : ''">
-    <span class="heroes__badge">{{hero.id}}</span> <span class="heroes__name">{{hero.name}}</span>
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{ hero.id }}">
+      <span class="heroes__badge">{{ hero.id }}</span>
+      <span class="heroes__name">{{ hero.name }}</span>
+    </a>
   </li>
 </ul>
 
 <ng-container *ngIf="selectedHero">
-  <h2>{{selectedHero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
+  <h2>{{ selectedHero.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{ selectedHero.id }}</div>
   <div>
-    <label>name:
-      <input [(ngModel)]="selectedHero.name" placeholder="name">
+    <label
+      >name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name" />
     </label>
   </div>
 </ng-container>
-
+<!--
 <div class="waves">
   <div class="ocean">
     <div class="wave a"></div>
@@ -45,4 +60,4 @@
     <div class="platzi__left"></div>
     <div class="platzi__right"></div>
   </div>
-</div>
+</div> -->

@@ -30,9 +30,10 @@ button {
   display: grid;
   justify-content: flex-start;
   grid-row-gap: 5px;
-  li {
+  li a {
     cursor: pointer;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 2s;
+    text-decoration: none;
     user-select: none;
     background: #ebebeb;
     list-style: none;
