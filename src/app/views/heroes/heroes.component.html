@@ -15,12 +15,33 @@
     <span class="heroes__name">{{ hero.name }}</span>
   </li>
 </ul> -->
+
+<div>
+  <label
+    >Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value = ''">
+    add
+  </button>
+</div>
+<!-- <ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{ hero.id }}">
+      <span class="heroes__badge">{{ hero.id }}</span>
+      <span class="heroes__name">{{ hero.name }}</span>
+    </a>
+  </li>
+</ul> -->
+
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/detail/{{ hero.id }}">
       <span class="heroes__badge">{{ hero.id }}</span>
       <span class="heroes__name">{{ hero.name }}</span>
     </a>
+    <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
   </li>
 </ul>
 
